@@ -10,7 +10,7 @@
     <h1>Bienvenue sur admin</h1>
     <?php
       require_once "menu.php";
-      require_once "functions.php";
+      require_once "../controller/functions.php";
      user_is_not_connected() 
     
      ?>

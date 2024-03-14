@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,7 +6,7 @@
     <title>Connection</title>
 </head>
 <body>
-    <form action="traitement_connection.php" method="POST">
+    <form action="../model/connection.php" method="POST">
       <div>
         <label for="mail">mail</label>
         <input type="mail" name="mail">
