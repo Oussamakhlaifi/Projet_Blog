@@ -6,7 +6,7 @@ if(
     !empty($_POST['pass'])
 )
 {
- require_once "functions.php";
+ require_once "controller/functions.php";
  $mail =  htmlspecialchars($_POST['mail']);
  $pass =  htmlspecialchars($_POST['pass']);
  signup($mail,$pass);
