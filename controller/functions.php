@@ -105,3 +105,12 @@ function add_article($title, $content, $id_user) {
     return $resultat;
 }
 
+function get_article(){
+    $pdo = get_PDO();
+    $query = " SELECT * FROM article" ; 
+    $statement = $pdo->prepare($query);
+    $resultat = $statement->execute();
+    $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $resultat ;
+
+}
