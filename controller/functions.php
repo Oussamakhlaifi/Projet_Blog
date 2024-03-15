@@ -111,6 +111,18 @@ function get_article(){
     $statement = $pdo->prepare($query);
     $resultat = $statement->execute();
     $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
-    return $resultat ;
+    return $articles ;
 
+}
+function delete_article($article_id){
+    $pdo = get_PDO();
+    $query = "DELETE FROM article WHERE id = :article_id";
+    $statement = $pdo->prepare($query);
+    $statement->bindParam(':article_id', $article_id, PDO::PARAM_INT);
+    $result = $statement->execute();
+    return $result;
+}
+function update_article($article_id){
+    $pdo =get_PDO();
+    $query = "UPDATE FROM article"
 }
