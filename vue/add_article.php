@@ -9,12 +9,12 @@
 <body>
     <h1>Bienvenue sur la creation d'article</h1>
     <?php
-      require_once "menu.php";
-      require_once "functions.php";
+      require_once "../model/menu.php";
+      require_once "../controller/functions.php";
      user_is_not_connected() 
     
      ?>
-    <form action="traitement_article.php" method="post">
+    <form action="../model/add_article.php" method="post">
         <div>
             <label for="title">titre de l'article</label>
             <input type="text" name="title", id="title">
@@ -25,7 +25,7 @@
                 
             </textarea>
         </div>
-        <button name="add_article"></button>
+        <button name="add_article">Envoyer</button>
     
 </body>
 </html>

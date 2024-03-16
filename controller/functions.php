@@ -122,7 +122,3 @@ function delete_article($article_id){
     $result = $statement->execute();
     return $result;
 }
-function update_article($article_id){
-    $pdo =get_PDO();
-    $query = "UPDATE FROM article"
-}
