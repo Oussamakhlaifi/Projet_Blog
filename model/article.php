@@ -6,10 +6,15 @@ require_once "../controller/functions.php";
 $menu_item = '';
 
 // Vérifie si l'utilisateur est connecté
-if (isset($_SESSION['user'])) {
+if (isset($_SESSION['admin'])) {
     // Récupère les articles
     $articles = get_article();
-} else {
+    require_once "../vue/article.php";
+ } elseif (isset($_SESSION['user'])){
+    $articles = get_article();
+  require_once "../vue/article_user.php";
+ } 
+else {
     // Redirection vers la page de connexion si l'utilisateur n'est pas connecté
     header("Location: connection.php");
     exit(); // Assurez-vous de quitter le script après la redirection
@@ -38,5 +43,5 @@ if(isset($_POST['update'])){
 }
 
 // Inclure la vue pour afficher les articles
-require_once "../vue/article.php";
+
 ?>
