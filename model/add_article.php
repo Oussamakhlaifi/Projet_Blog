@@ -1,7 +1,8 @@
-<?php 
-
-
+<?php  
+require_once "../controller/functions.php";
+require_once "../vue/add_article.php";
 if(
+    
     isset($_POST["add_article"]) &&
     $_SESSION['role']== "admin" &&
     !empty($_POST['title']) &&
@@ -11,10 +12,9 @@ if(
     $title = htmlspecialchars($_POST['title']);
     $content = htmlspecialchars($_POST['content']);
     $id_user = $_SESSION['id_user'];
-    require_once "../controller/functions.php";
+    
     add_article($title,$content,$id_user);
     
 
   }
 
-require_once "../vue/add_article.php";
