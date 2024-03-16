@@ -17,7 +17,7 @@
                     <input type="hidden" name="article_id" value="<?php echo $article['id']; ?>">
                     <button name="delete" type="submit">Supprimer</button>
                 </form>
-                <form action="page_de_mise_a_jour.php" method="GET">
+                <form action="../model/update.php" method="GET">
                     <input type="hidden" name="article_id" value="<?php echo $article['id']; ?>">
                     <button name="update" type="submit">Modifier</button>
                 </form>
@@ -26,4 +26,3 @@
     </ul>
 </body>
 </html>
-

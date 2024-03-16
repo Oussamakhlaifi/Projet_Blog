@@ -34,7 +34,7 @@ if (isset($_POST['delete'])) {
     }
 }
 if(isset($_POST['update'])){
-    if()
+    
 }
 
 // Inclure la vue pour afficher les articles
