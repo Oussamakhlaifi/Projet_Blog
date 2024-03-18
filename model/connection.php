@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "../vue/menu.php";
 require_once "../vue/connection.php";
 require_once "../controller/functions.php"; // Inclure les fonctions nécessaires
 

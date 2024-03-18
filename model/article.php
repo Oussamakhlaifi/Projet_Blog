@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "../controller/functions.php";
-
+require_once "../vue/menu.php";
 // Initialisation de la variable $menu_item
 $menu_item = '';
 
