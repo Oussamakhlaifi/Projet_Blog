@@ -10,7 +10,7 @@ if(
  $mail =  htmlspecialchars($_POST['mail']);
  $pass =  htmlspecialchars($_POST['pass']);
  signup($mail,$pass);
- header("traitement_connection.php");
+ header("../model/connection.php");
 }
 else{
    header("location: inscription.php"); 
