@@ -1,25 +1,24 @@
 <?php
 session_start();
+
 // Charger les fichiers nécessaires
 include_once '../vue/menu.php';
+require_once '../vue/inscrit.php';
+require_once "../controller/functions.php";
 
-
-if(
+if (
     isset($_POST['submit']) &&
     !empty($_POST['mail']) &&
     !empty($_POST['pass'])
-)
-{
- require_once "../controller/functions.php";
- $mail =  htmlspecialchars($_POST['mail']);
- $pass =  htmlspecialchars($_POST['pass']);
- signup($mail,$pass);
- header("connection.php");
+) {
+    $mail = htmlspecialchars($_POST['mail']);
+    $pass = htmlspecialchars($_POST['pass']);
+    signup($mail, $pass);
+    header("Location: connection.php"); // Corrected redirection
+    exit(); // Ensure script stops executing after redirection
+} else {
+    header("Location: inscription.php"); // Corrected redirection
+    exit(); // Ensure script stops executing after redirection
 }
-else{
-   header("location: inscription.php"); 
-
-}
-require_once '../vue/inscrit.php';
-// Récupérer l'action demandée à partir de l'URL
+?>
 
