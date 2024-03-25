@@ -1,15 +1,20 @@
 <?php
 require_once '../controller/functions.php';
+
 // Le contrôleur gère les requêtes utilisateur
-if (isset($_SESSION['admin'])  ) {
-    $menu_item = '<li class="elem_menu"><a href="admin.php">administration du blog</a><a href="article.php">Voir les articles</a><a href="add_article.php.php">Ajouter un article</a></li>';
-} 
-elseif (isset($_SESSION['user'])  ) {
-    $menu_item = '<li class="elem_menu"><a href="add_article.php">Ajouter un article</a><a href="../controller/logout.php">Déconnection</a><a href="article.php">Voir les article </a></li>';
+if (isset($_SESSION['admin'])) {
+    $menu_item = '<li class="nav-item"><a class="nav-brand" href="admin.php">Administration du blog</a></li><li class="nav-item"><a class="nav-link" href="article.php">Voir les articles</a></li><li class="nav-item"><a class="nav-link" href="add_article.php">Ajouter un article</a></li>';
+} elseif (isset($_SESSION['user'])) {
+    $menu_item = '<li class="nav-item"><a class="nav-link" href="add_article.php">Ajouter un article</a></li><li class="nav-item"><a class="nav-link" href="../controller/logout.php">Déconnexion</a></li><li class="nav-item"><a class="nav-link" href="article.php">Voir les articles</a></li>';
 } else {
-    $menu_item = '<li class="elem_menu"><a href="connection.php">About us</a><a href="connection.php">connexion</a><a href="inscription.php">Inscription</a></li>';
+    $menu_item = '<li class="nav-item"><a class="nav-link" href="connection.php">About us</a></li><li class="nav-item"><a class="nav-link" href="connection.php">Connexion</a></li><li class="nav-item"><a class="nav-link" href="inscription.php">Inscription</a></li>';
 }
 
-// Inclure la vue
-require_once '../vue/menu.php';
+// Définir l'en-tête de la réponse comme étant du type JSON
+header('Content-Type: application/json');
+
+// Renvoyer le contenu du menu au format JSON
+echo json_encode(array('menu_item' => $menu_item));
 ?>
+
+
